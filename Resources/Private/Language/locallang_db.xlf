@@ -1,118 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-05-29T16:32:45Z" product-name="t3sbootstrap">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-04T21:13:10Z" product-name="t3petclinic">
 		<header/>
 		<body>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config">
-				<source>Config</source>
+			<trans-unit id="tx_t3petclinic_domain_model_owner">
+				<source>Owner</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.name" xml:space="preserve">
+			<trans-unit id="tx_t3petclinic_domain_model_owner.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_t3petclinic_domain_model_owner.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_t3petclinic_domain_model_owner.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_t3petclinic_domain_model_owner.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_t3petclinic_domain_model_owner.telephone">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_t3petclinic_domain_model_pet">
+				<source>Pet</source>
+			</trans-unit>
+			<trans-unit id="tx_t3petclinic_domain_model_pet.name">
 				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_enable">
-				<source>Enable Navbar</source>
+			<trans-unit id="tx_t3petclinic_domain_model_pet.birthdate">
+				<source>Birthdate</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_inverse">
-				<source>Navbar Inverse</source>
+			<trans-unit id="tx_t3petclinic_domain_model_pet.owner">
+				<source>Owner</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.company">
-				<source>Company</source>
+			<trans-unit id="tx_t3petclinic_domain_model_pet.pet_type">
+				<source>Pet Type</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.pagetitle_prefix">
-				<source>Pagetitle Prefix</source>
+			<trans-unit id="tx_t3petclinic_domain_model_pettype">
+				<source>Pet Type</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.pagetitle_suffix">
-				<source>Pagetitle Suffix</source>
+			<trans-unit id="tx_t3petclinic_domain_model_pettype.name">
+				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.homepage_uid">
-				<source>Homepage Uid</source>
+			<trans-unit id="tx_t3petclinic_domain_model_visit">
+				<source>Visit</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_entry_level">
-				<source>Navbar Entry Level</source>
+			<trans-unit id="tx_t3petclinic_domain_model_visit.date">
+				<source>Date</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_exclude_uid_list">
-				<source>Navbar Exclude Uid List</source>
+			<trans-unit id="tx_t3petclinic_domain_model_visit.description">
+				<source>Description</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_right_uid_list">
-				<source>Navbar Right Uid List</source>
+			<trans-unit id="tx_t3petclinic_domain_model_visit.pet">
+				<source>Pet</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_right_label">
-				<source>Navbar Right Label</source>
+			<trans-unit id="tx_t3petclinic_domain_model_vet">
+				<source>Vet</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_hover">
-				<source>Navbar Hover</source>
+			<trans-unit id="tx_t3petclinic_domain_model_vet.first_name">
+				<source>First Name</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_submenu">
-				<source>Navbar Submenu</source>
+			<trans-unit id="tx_t3petclinic_domain_model_vet.last_name">
+				<source>Last Name</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.breadcrumb_enable">
-				<source>Breadcrumb Enable</source>
+			<trans-unit id="tx_t3petclinic_domain_model_specialty">
+				<source>Specialty</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.submenu_enable">
-				<source>Submenu Enable</source>
+			<trans-unit id="tx_t3petclinic_domain_model_specialty.name">
+				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.submenu_exclude_uid_list">
-				<source>Submenu Exclude Uid List</source>
+			<trans-unit id="tx_t3petclinic_domain_model_specialty.vets">
+				<source>Vets</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_search_enable">
-				<source>Navbar Search Enable</source>
+			<trans-unit id="tx_t3petclinic_t3petclinicplugin.name">
+				<source>T3PetclinicPlugin</source>
 			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_lang_enable">
-				<source>Navbar Lang Enable</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_lang_label">
-				<source>Navbar Lang Label</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_lang_languages">
-				<source>Navbar Lang Languages</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_lang_languages_labels">
-				<source>Navbar Lang Languages Labels</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.container_fluid">
-				<source>Container Fluid</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.jumbotron_enable">
-				<source>Jumbotron Enable</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.jumbotron_bg_img_enable">
-				<source>Jumbotron Bg Img Enable</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.jumbotron_bg_img_maxwidth">
-				<source>Jumbotron Bg Img Maxwidth</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.jumbotron_bg_img_maxheight">
-				<source>Jumbotron Bg Img Maxheight</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.bs_header_enable">
-				<source>Bs Header Enable</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_fixedtop">
-				<source>Navbar Fixedtop</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_top">
-				<source>Navbar Top</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.navbar_height">
-				<source>Navbar Height</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.footer_enable">
-				<source>Footer Enable</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.footer_fullwidth">
-				<source>Footer Fullwidth</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.footer_sticky">
-				<source>Footer Sticky</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.lightbox_enable">
-				<source>Lightbox Enable</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.lightbox_group">
-				<source>Lightbox Group</source>
-			</trans-unit>
-			<trans-unit id="tx_t3sbootstrap_domain_model_config.lightbox_data_attribute">
-				<source>Lightbox Data Attribute</source>
+			<trans-unit id="tx_t3petclinic_t3petclinicplugin.description">
+				<source>TYPO3 Petclinic Frontend Plugin  - A Fluid and Extbase Version of Spring Petclinic</source>
 			</trans-unit>
 		</body>
 	</file>

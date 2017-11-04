@@ -2,35 +2,34 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
-	function($extKey)
-	{
+    function()
+    {
 
-		if (TYPO3_MODE === 'BE') {
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'ThomasWoehlke.T3petclinic',
+            'T3petclinicplugin',
+            'T3PetclinicPlugin'
+        );
 
-			\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-				'T3SBS.T3sbootstrap',
-				'web', // Make module a submodule of 'web'
-				'm1', // Submodule key
-				'', // Position
-				[
-					'Config' => 'list, new, create, edit, update, delete, ',
-				],
-				[
-					'access' => 'user,group',
-					'icon'	  => 'EXT:' . $extKey . '/Resources/Public/Images/bootstrap-solid.svg',
-					'labels' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_m1.xlf',
-				]
-			);
-		}
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('t3petclinic', 'Configuration/TypoScript', 'T3Petclinic');
 
-		/***************
-		 * Include TypoScript
-		 */
-		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extKey, 'Configuration/TypoScript', 'Bootstrap Components');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3petclinic_domain_model_owner', 'EXT:t3petclinic/Resources/Private/Language/locallang_csh_tx_t3petclinic_domain_model_owner.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_t3petclinic_domain_model_owner');
 
-		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3sbootstrap_domain_model_config', 'EXT:t3sbootstrap/Resources/Private/Language/locallang_csh_tx_t3sbootstrap_domain_model_config.xlf');
-		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_t3sbootstrap_domain_model_config');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3petclinic_domain_model_pet', 'EXT:t3petclinic/Resources/Private/Language/locallang_csh_tx_t3petclinic_domain_model_pet.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_t3petclinic_domain_model_pet');
 
-	},
-	$_EXTKEY
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3petclinic_domain_model_pettype', 'EXT:t3petclinic/Resources/Private/Language/locallang_csh_tx_t3petclinic_domain_model_pettype.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_t3petclinic_domain_model_pettype');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3petclinic_domain_model_visit', 'EXT:t3petclinic/Resources/Private/Language/locallang_csh_tx_t3petclinic_domain_model_visit.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_t3petclinic_domain_model_visit');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3petclinic_domain_model_vet', 'EXT:t3petclinic/Resources/Private/Language/locallang_csh_tx_t3petclinic_domain_model_vet.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_t3petclinic_domain_model_vet');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3petclinic_domain_model_specialty', 'EXT:t3petclinic/Resources/Private/Language/locallang_csh_tx_t3petclinic_domain_model_specialty.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_t3petclinic_domain_model_specialty');
+
+    }
 );

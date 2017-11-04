@@ -1,0 +1,19 @@
+{
+    "name": "thomaswoehlke/t3petclinic",
+    "type": "typo3-cms-extension",
+    "description": "TYPO3 Petclinic - A Fluid and Extbase Version of Spring Petclinic",
+    "authors": [
+        {
+            "name": "Thomas Woehlke",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ThomasWoehlke\\T3petclinic\\": "Classes"
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<T3DataStructure>
+ 	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<type>array</type>
+				<TCEforms>
+					<sheetTitle>Settings</sheetTitle>
+				</TCEforms>
+				<el>
+					<active>
+						<TCEforms>
+							<label>Active</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</active>
+
+					<style>
+						<TCEforms>
+							<label>Button Style</label>
+							<displayCond>USER:T3SBS\T3sbootstrap\UserFunction\TcaMatcher->isButton</displayCond>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.primary</numIndex>
+										<numIndex index="1">primary</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">secondary</numIndex>
+										<numIndex index="1">secondary</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.success</numIndex>
+										<numIndex index="1">success</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.info</numIndex>
+										<numIndex index="1">info</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.warning</numIndex>
+										<numIndex index="1">warning</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.danger</numIndex>
+										<numIndex index="1">danger</numIndex>
+									</numIndex>
+
+									<numIndex index="6" type="array">
+										<numIndex index="0">light</numIndex>
+										<numIndex index="1">light</numIndex>
+									</numIndex>
+									<numIndex index="7" type="array">
+										<numIndex index="0">dark</numIndex>
+										<numIndex index="1">dark</numIndex>
+									</numIndex>
+									<numIndex index="8" type="array">
+										<numIndex index="0">link</numIndex>
+										<numIndex index="1">link</numIndex>
+									</numIndex>
+								</items>
+								<default>primary</default>
+							</config>
+						</TCEforms>
+					</style>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

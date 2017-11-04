@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Button Template</f:comment>
+<f:layout name="Default" />
+<f:section name="Header">
+<f:comment>No header for t3sbs_button</f:comment>
+</f:section>
+<f:section name="Main">
+	<f:if condition="{divWrap}">
+		 <f:then>
+		 	<f:comment> --- div wrap in Layout/Content/Default.html (default) but NO {class} --- </f:comment>
+			<f:link.typolink
+				parameter="{data.header_link}"
+				class="{typolinkButtonClass}"
+				additionalAttributes="{role: 'button'}">
+				{f:if(condition: '{data.tx_t3sbootstrap_fontawesome_icon}', then: '<i class="fa {data.tx_t3sbootstrap_fontawesome_icon}"></i> ')}{data.header}
+			</f:link.typolink>
+		 </f:then>
+		 <f:else>
+		 	<f:comment> --- if is child of gridelement (button_group) - NO div wrap in Layout/Content/Default.html --- </f:comment>
+			<f:link.typolink
+				parameter="{data.header_link}"
+				class="{f:if(condition: '{class}', then: '{class} ')}{typolinkButtonClass}"
+				additionalAttributes="{id: 'c{data.uid}', role: 'button'}">
+				{f:if(condition: '{data.tx_t3sbootstrap_fontawesome_icon}', then: '<i class="fa {data.tx_t3sbootstrap_fontawesome_icon}"></i> ')}{data.header}
+			</f:link.typolink>
+		 </f:else>
+	</f:if>
+</f:section>
+</html>

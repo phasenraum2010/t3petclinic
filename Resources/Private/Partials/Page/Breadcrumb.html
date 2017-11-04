@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{config.breadcrumb.enable}">
+	<f:if condition="{config.breadcrumb.containerposition} == 'outside'">
+	    <f:then>
+			<f:render section="Outside" arguments="{_all}" />
+	    </f:then>
+	    <f:else if="{config.breadcrumb.containerposition} == 'inside'">
+			<f:render section="Inside" arguments="{_all}" />
+	    </f:else>
+	    <f:else>
+			<f:render section="Default" arguments="{_all}" />
+	    </f:else>
+	</f:if>
+</f:if>
+</html>
+
+
+<f:section name="Default">
+	<nav class="breadcrumb{config.breadcrumb.class}">
+		<f:render section="Breadcrumb" arguments="{_all}" />
+	</nav>
+</f:section>
+
+<f:section name="Inside">
+	<nav class="breadcrumb{config.breadcrumb.class}">
+		<div class="{config.breadcrumb.container}">
+			<f:render section="Breadcrumb" arguments="{_all}" />
+		</div>
+	</nav>
+</f:section>
+
+<f:section name="Outside">
+	<div class="{config.breadcrumb.container}">
+		<nav class="breadcrumb{config.breadcrumb.class}">
+			<f:render section="Breadcrumb" arguments="{_all}" />
+		</nav>
+	</div>
+</f:section>
+
+<f:section name="Breadcrumb">
+	<f:for each="{breadcrumb}" as="breadcrumbItem">
+		 <a class="breadcrumb-item{f:if(condition:'{breadcrumbItem.current}',then:' active')}" href="{breadcrumbItem.link}">
+			 {breadcrumbItem.title}
+		 </a>
+	</f:for>
+</f:section>

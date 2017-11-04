@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{config.meta.container}">
+	<f:then>
+		<f:if condition="{config.meta.class}">
+			<div class="meta-nav {config.meta.class}">
+		</f:if>
+		<div class="{config.meta.container}">
+			<f:render section="Meta" arguments="{_all}" />
+		</div>
+		<f:if condition="{config.meta.class}">
+			</div>
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:if condition="{config.meta.class}">
+			<div class="meta-nav {config.meta.class}">
+		</f:if>
+		<f:render section="Meta" arguments="{_all}" />
+		<f:if condition="{config.meta.class}">
+			</div>
+		</f:if>
+	</f:else>
+</f:if>
+</html>
+
+<f:section name="Meta">
+	<ul class="nav justify-content-{config.meta.align}">
+		<f:for each="{metaNavigation}" as="metaItem">
+			<li class="nav-item">
+				<f:link.typolink class="nav-link{f:if(condition: metaItem.active, then:' active')}" parameter="{metaItem.link}">
+					{metaItem.title}
+				</f:link.typolink>
+			</li>
+		</f:for>
+	</ul>
+</f:section>

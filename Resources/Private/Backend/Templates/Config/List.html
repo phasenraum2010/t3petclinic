@@ -1,0 +1,130 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="content">
+	<h1>T3SB Configuration</h1>
+	<f:if condition="{config}">
+		<h2 class="text-primary">{config.name}</h2>
+	</f:if>
+	<f:flashMessages />
+	<f:if condition="{config}">
+		<f:then>
+			<f:link.action action="edit" arguments="{config : config}" class="btn btn-primary btn-block" style="margin-bottom:2rem;">Edit this configuration</f:link.action>
+			<f:if condition="{isSiteroot}">
+				<f:then>
+					<div class="panel-group" id="accordionInfo" role="tablist" aria-multiselectable="true">
+						<div class="panel panel-default">
+							<div class="panel-heading panel-info" role="tab" id="configinfo">
+								<h4 class="panel-title text-center">
+									<a role="button" data-toggle="collapse" data-parent="#accordionInfo" style="display: block;" href="#collapseConfiginfo" aria-expanded="false" aria-controls"collapseConfiginfo">
+										Pages with T3SB Configuration
+									</a>
+								</h4>
+							</div>
+							<div id="collapseConfiginfo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="configinfo">
+								<div class="panel-body">
+									<table class="table table-striped">
+										<thead class="thead-default">
+										<tr>
+											<th>#</th>
+											<th>page uid</th>
+											<th>page title</th>
+										</tr>
+										</thead>
+										<tbody>
+											<f:for each="{allConfig}" as="config" iteration="iterator">
+												<tr>
+													<th scope="row">{iterator.cycle}</th>
+													<td>{config.uid}</td>
+													<td>{config.title}</td>
+												</tr>
+											</f:for>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<f:if condition="{titleTags}">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="überschriftZwei">
+									<h4 class="panel-title text-center">
+										<a role="button" data-toggle="collapse" data-parent="#accordionInfo" style="display: block;" href="#collapseZwei" aria-expanded="false" aria-controls"collapseConfiginfo">
+											Metadata Title Tag (overview)
+										</a>
+									</h4>
+								</div>
+								<div id="collapseZwei" class="panel-collapse collapse" role="tabpanel" aria-labelledby="überschriftZwei">
+									<div class="panel-body">
+										<table class="table">
+											<thead class="thead-default">
+											<tr>
+												<th>#</th>
+												<th>page uid</th>
+												<th>page title</th>
+												<th>page metatitle</th>
+											</tr>
+											</thead>
+											<tbody>
+												<f:for each="{titleTags.1}" as="page" iteration="iterator">
+													<tr>
+														<th scope="row">{iterator.cycle}</th>
+														<td>{page.uid}</td>
+														<td>{page.title}</td>
+														<td>{page.titleTag}</td>
+													</tr>
+												</f:for>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</f:if>
+					</div>
+					<f:if condition="{settings.customScss}">
+						<f:then>
+							<f:if condition="{customScss}">
+								<f:then>
+									<p class="text-success text-center lead" style="margin:3rem 0 1rem 0;">Custom scss is activated!</p>
+									<p class="text-center">You can override default Bootstrap values in <strong>{settings.customScssPath}custom.scss</strong>
+										 without modifying source files.<br /> <small>Clean up temporary files in typo3temp/DynCss/ after edit this file!</small></p>
+								</f:then>
+								<f:else>
+									<p class="text-danger text-center lead" style="margin:3rem 0 1rem 0;">Custom scss is activated but no custom.scss file exist!<br /> Run the schedular task "T3SB Custom Scss" to write the file.</p>
+								</f:else>
+							</f:if>
+						</f:then>
+						<f:else>
+							<p class="text-danger text-center lead" style="margin:3rem 0 1rem 0;">Custom scss is not activated!</p>
+						</f:else>
+					</f:if>
+				</f:then>
+				<f:else>
+					<f:if condition="{admin}">
+						<f:link.action action="delete" arguments="{config : config}" class="btn btn-danger btn-block" additionalAttributes="{onclick: 'return confirm(\'Are you sure want to delete this configuration?\')'}">Delete this configuration</f:link.action>
+					</f:if>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:if condition="{isSiteroot}">
+				<f:then>
+					<f:link.action action="new" class="btn btn-primary btn-block">New main configuration</f:link.action>
+				</f:then>
+				<f:else>
+					<f:if condition="{rootConfig}">
+						<f:then>
+							<f:if condition="{admin}">
+								<f:link.action action="new" class="btn btn-warning btn-block">Override configuration</f:link.action>
+							</f:if>
+						</f:then>
+						<f:else>
+							<f:if condition="{admin}">
+								<div class="alert alert-danger" role="alert">The main configuration has to be created first on the root page.</div>
+							</f:if>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:section>
+</html>

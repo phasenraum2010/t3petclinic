@@ -1,0 +1,111 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Header">
+	<f:if condition="{gallery.position.noWrap} == FALSE">
+		<f:if condition="{data.imageorient} == 66 || {data.imageorient} == 77">
+			<f:else>
+				<f:render partial="Header/All" arguments="{_all}" />
+			</f:else>
+		</f:if>
+	</f:if>
+</f:section>
+<f:section name="Main">
+<f:comment> Beside Text right or left - align-items-center </f:comment>
+<f:if condition="{data.imageorient} == 66 || {data.imageorient} == 77">
+	<f:then>
+		<f:if condition="{data.imageorient} == 66">
+			<f:then>
+				<div class="row">
+					<div class="col">
+						<div class="row align-items-center h-100">
+							<div class="col">
+								<f:render partial="Header/All" arguments="{_all}" />
+								<f:format.html>{data.bodytext}</f:format.html>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-auto">
+						<f:render partial="Media/Gallery" arguments="{_all}" />
+					</div>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="row">
+					<div class="col-md-auto">
+						<f:render partial="Media/Gallery" arguments="{_all}" />
+					</div>
+					<div class="col">
+						<div class="row align-items-center h-100">
+							<div class="col">
+								<f:render partial="Header/All" arguments="{_all}" />
+								<f:format.html>{data.bodytext}</f:format.html>
+							</div>
+						</div>
+					</div>
+				</div>
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:render section="Default" arguments="{_all}" />
+	</f:else>
+</f:if>
+</f:section>
+</html>
+
+
+<f:section name="Default">
+<f:comment> In Text right or left </f:comment>
+<f:if condition="{data.imageorient} == 17 || {data.imageorient} == 18">
+	<f:then>
+		<f:render partial="Media/Gallery" arguments="{_all}" />
+		<f:format.html>{data.bodytext}</f:format.html>
+	</f:then>
+	<f:else>
+		<f:comment> Beside Text right or left </f:comment>
+		<f:if condition="{gallery.position.noWrap}">
+			<f:then>
+				<f:if condition="{gallery.position.horizontal} == 'left'">
+					<f:then>
+						<f:render partial="Header/All" arguments="{_all}" />
+						<div class="row">
+							<div class="col-md-auto">
+								<f:render partial="Media/Gallery" arguments="{_all}" />
+							</div>
+							<div class="col">
+								<f:format.html>{data.bodytext}</f:format.html>
+							</div>
+						</div>
+					</f:then>
+					<f:else>
+						<f:render partial="Header/All" arguments="{_all}" />
+						<div class="row">
+							<div class="col">
+								<f:format.html>{data.bodytext}</f:format.html>
+							</div>
+							<div class="col-md-auto">
+								<f:render partial="Media/Gallery" arguments="{_all}" />
+							</div>
+						</div>
+					</f:else>
+				</f:if>
+			</f:then>
+			<f:else>
+			<f:comment> Above or below the Text </f:comment>
+				<div class="ce-textpic{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap row')}">
+					<f:if condition="{gallery.position.vertical} == 'below'">
+						<f:then>
+								<f:format.html>{data.bodytext}</f:format.html>
+							<f:render partial="Media/Gallery" arguments="{_all}" />
+						</f:then>
+						<f:else>
+							<f:render partial="Media/Gallery" arguments="{_all}" />
+								<f:format.html>{data.bodytext}</f:format.html>
+						</f:else>
+					</f:if>
+				</div>
+			</f:else>
+		</f:if>
+	</f:else>
+</f:if>
+</f:section>

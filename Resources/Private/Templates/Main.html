@@ -1,0 +1,45 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{noConfig}'">
+	<f:then>
+		<h3 class="text-danger text-center mt-5">The main configuration has to be created first on the root page.</h3>
+	</f:then>
+	<f:else>
+		<f:spaceless>
+			<f:if condition="{settings.expandedContent}">
+				<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '20'}"/>
+			</f:if>
+			<div id="page-wrapper">
+				<f:if condition="{metaNavigation}">
+					<f:render partial="Page/Meta" arguments="{metaNavigation: metaNavigation, config: config}" />
+				</f:if>
+				<f:render partial="Page/_main" arguments="{_all}" />
+				<f:if condition="{data.tx_t3sbootstrap_container}">
+					<div class="{data.tx_t3sbootstrap_container}">
+				</f:if>
+					<f:if condition="{be_layout} && {be_layout} != 'default'">
+						<f:then>
+							<f:render partial="BackendLayouts/{be_layout}" arguments="{_all}" />
+						</f:then>
+						<f:else>
+							<f:render partial="BackendLayouts/OneCol" arguments="{_all}" />
+						</f:else>
+					</f:if>
+				<f:if condition="{data.tx_t3sbootstrap_container}">
+					</div>
+				</f:if>
+			</div>
+			<f:if condition="{config.footer.enable}">
+				<f:render partial="Page/Footer" arguments="{_all}" />
+			</f:if>
+			<f:if condition="{settings.expandedContent}">
+				<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '21'}"/>
+			</f:if>
+			<f:link.page class="back-to-top"
+				style="display: none;"
+				title="to top">
+				<i class="fa fa-chevron-circle-up fa-4x" aria-hidden="true"></i>
+			</f:link.page>
+		</f:spaceless>
+	</f:else>
+</f:if>
+</html>

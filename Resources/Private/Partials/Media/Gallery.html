@@ -1,0 +1,71 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Gallery Template</f:comment>
+<f:if condition="{gallery.rows} || {files}">
+	<f:switch expression="{data.CType}">
+		<f:case value="t3sbs_card">
+			<f:render section="RawRows" arguments="{_all}" />
+		</f:case>
+		<f:case value="t3sbs_mediaobject">
+			<f:render section="RawRows" arguments="{_all}" />
+		</f:case>
+		<f:defaultCase>
+			<f:comment> In Text right or left</f:comment>
+			<f:if condition="{data.imageorient} == 17 || {data.imageorient} == 18 || {data.imageorient} == 66 || {data.imageorient} == 77">
+				<f:then>
+					<div class="gallery text-center float-md-{f:if(condition:'{data.imageorient} == 17',then:'right ml-md-3',else:'left mr-md-3')}">
+						<f:render section="GalleryRows" arguments="{_all}" />
+					</div>
+				</f:then>
+				<f:else>
+					<f:comment> Beside Text right or left </f:comment>
+					<f:if condition="{gallery.position.noWrap}">
+						<f:then>
+								<div class="gallery text-center" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+									<f:render section="GalleryRows" arguments="{_all}" />
+								</div>
+						</f:then>
+						<f:else>
+								<f:comment> Above or below the Text </f:comment>
+								<div class="gallery text-center text-md-{gallery.position.horizontal}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+									<f:render section="GalleryRows" arguments="{_all}" />
+								</div>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</f:defaultCase>
+	</f:switch>
+</f:if>
+</html>
+
+
+<f:section name="GalleryRows">
+<f:for each="{gallery.rows}" as="row" iteration="iterator">
+	<div class="row no-gutters">
+		<f:for each="{row.columns}" as="column">
+			<f:if condition="{column.media}">
+				<div class="col{f:if(condition: iterator.isLast, then: ' last-figure')}">
+					<f:render partial="Media/Type" arguments="{
+						file: column.media,
+						dimensions: column.dimensions,
+						addmedia: addmedia}" />
+				</div>
+			</f:if>
+		</f:for>
+	</div>
+</f:for>
+</f:section>
+
+<f:section name="RawRows">
+<f:for each="{gallery.rows}" as="row" iteration="iterator">
+	<f:for each="{row.columns}" as="column">
+		<f:if condition="{column.media}">
+			<f:render partial="Media/Type" arguments="{
+				file: column.media,
+				dimensions: column.dimensions,
+				addmedia: addmedia}" />
+		</f:if>
+	</f:for>
+</f:for>
+</f:section>
+

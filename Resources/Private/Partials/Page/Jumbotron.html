@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{config.jumbotron.enable}">
+	<f:if condition="{config.jumbotron.container}">
+		<f:then>
+			<f:render section="{config.jumbotron.containerposition}" arguments="{_all}" />
+		</f:then>
+		<f:else>
+			<f:render section="Default" arguments="{_all}" />
+		</f:else>
+	</f:if>
+</f:if>
+</html>
+
+<f:section name="Default">
+	<f:render section="Div" arguments="{_all}" />
+		<f:render section="Content" arguments="{_all}" />
+	</div>
+</f:section>
+
+<f:section name="Inside">
+	<f:render section="Div" arguments="{_all}" />
+		<div class="{config.jumbotron.container}">
+			<f:render section="Content" arguments="{_all}" />
+		</div>
+	</div>
+</f:section>
+
+<f:section name="Outside">
+	<f:render section="Div" arguments="{_all}" />
+		<div class="jumbotron{config.jumbotron.class}">
+			<f:render section="Content" arguments="{_all}" />
+		</div>
+	</div>
+</f:section>
+
+<f:section name="Content">
+	<f:if condition="{config.general.pageTitle} == 'jumbotron'">
+		<f:render partial="Page/Title" arguments="{title: data.title, align: config.general.pageTitlealign}" />
+	</f:if>
+	<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '3'}"/>
+</f:section>
+
+<f:section name="Div">
+	<f:if condition="{config.jumbotron.bgImage}">
+		<f:then>
+			<div id="s{data.uid}" class="jumbotron background-image bgImageSize{config.jumbotron.class}" style="background-image: url('{config.jumbotron.bgImage}');">
+		</f:then>
+		<f:else>
+			<div class="jumbotron{config.jumbotron.class}">
+		</f:else>
+	</f:if>
+</f:section>

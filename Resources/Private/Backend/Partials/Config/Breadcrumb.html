@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="form-group row">
+	<label for="breadcrumbEnable" class="col-sm-3 control-label">
+		Enable
+	</label>
+	<div class="col-sm-9">
+		<div class="checkbox">
+			  <label>
+				<f:form.checkbox id="breadcrumbEnable" class="form-check-input" property="breadcrumbEnable" value="1" />
+			  </label>
+		</div>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="breadcrumbCorner" class="col-sm-3 control-label">
+		No Rounded Corner
+	</label>
+	<div class="col-sm-9">
+		<div class="checkbox">
+			<label>
+			<f:form.checkbox id="breadcrumbCorner" class="form-check-input" property="breadcrumbCorner" value="1" />
+			<small class="form-text text-muted">To make the breadcrumb without rounded corners</small>
+			</label>
+		</div>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="breadcrumbPosition" class="col-sm-3 control-label">
+		Breadcrumb Position
+	</label>
+	<div class="col-sm-9">
+		<f:form.select
+			id="breadcrumbPosition"
+			class="form-control"
+			property="breadcrumbPosition"
+			options="{breadcrumbPositions}"
+			optionValueField="key"
+			optionLabelField="value"
+		/>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="breadcrumbContainer" class="col-sm-3 control-label">
+		Container
+	</label>
+	<div class="col-sm-9">
+		<f:form.select
+			id="breadcrumbContainer"
+			class="form-control"
+			property="breadcrumbContainer"
+			options="{breadcrumbContainerOptions}"
+			optionValueField="key"
+			optionLabelField="value"
+		/>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="breadcrumbContainerposition" class="col-sm-3 control-label">
+		Container position
+	</label>
+	<div class="col-sm-9">
+		<f:form.select
+			id="breadcrumbContainerposition"
+			class="form-control"
+			property="breadcrumbContainerposition"
+			options="{breadcrumbContainerpositionOptions}"
+			optionValueField="key"
+			optionLabelField="value"
+		/>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="breadcrumbClass" class="col-sm-3 control-label">
+		Extra class
+	</label>
+	<div class="col-sm-9">
+		<f:form.textfield
+			id="breadcrumbClass"
+			class="form-control"
+			property="breadcrumbClass"
+		/>
+		<small class="form-text text-muted">e.g. "mb-0" for margin-bottom: 0</small>
+	</div>
+</div>
+</html>

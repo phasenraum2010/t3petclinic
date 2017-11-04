@@ -1,0 +1,19 @@
+<T3DataStructure>
+   <meta type="array">
+	  <langDisable>1</langDisable>
+   </meta>
+   <ROOT type="array">
+	  <type>array</type>
+	  <el type="array">
+		 <insert_cols type="array">
+			<TCEforms type="array">
+			   <label>Spalten einsetzen</label>
+			   <config>
+				  <type>check</type>
+				  <default>0</default>
+			   </config>
+			</TCEforms>
+		 </insert_cols>
+	  </el>
+   </ROOT>
+</T3DataStructure>

@@ -1,0 +1,69 @@
+renderingOptions:
+  submitButtonLabel: Submit
+identifier: t3sb_kontaktformular
+label: 'T3SB Kontaktformular (ajax)'
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: Kontaktformular
+      recipientAddress: your@mail.com
+      recipientName: ''
+      senderAddress: '{email}'
+      senderName: '{name}'
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: 'false'
+      translation:
+        language: ''
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: ''
+      nextButtonLabel: ''
+    identifier: page-1
+    label: ''
+    type: Page
+    renderables:
+      -
+        defaultValue: ''
+        identifier: name
+        label: Name
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: email
+        label: E-Mail
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'E-Mail Adresse'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: Nachricht
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+            required: required
+        validators:
+          -
+            identifier: NotEmpty

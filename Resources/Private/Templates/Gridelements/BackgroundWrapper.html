@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<span class="anchor" id="c{data.uid}"></span>
+<f:render partial="Header/All" arguments="{_all}" />
+<f:if condition="{bgImage}">
+	<f:then>
+		<section id="s{data.uid}" class="background-image bgImageSize{f:if(condition: '{class}', then: ' {class}')}" style="background-image: url('{bgImage}');{f:if(condition: '{style}', then: ' {style}')}">
+			<f:render section="SectionInner" arguments="{_all}" />
+		</section>
+	</f:then>
+	<f:else>
+		<section id="s{data.uid}" class="background-color{f:if(condition: '{class}', then: ' {class}')}" style="{style}">
+			<f:render section="SectionInner" arguments="{_all}" />
+		</section>
+	</f:else>
+</f:if>
+</html>
+
+<f:section name="SectionInner">
+	<f:if condition="{container}">
+		<div class="{container}">
+	</f:if>
+		{data.tx_gridelements_view_column_0 -> f:format.raw()}
+	<f:if condition="{container}">
+		</div>
+	</f:if>
+</f:section>

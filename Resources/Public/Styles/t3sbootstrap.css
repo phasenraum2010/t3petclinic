@@ -1,0 +1,221 @@
+/*
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+*/
+
+html {font-size: 14px;}
+
+#page-wrapper {
+	overflow-x: hidden;
+	min-height: 300px;
+}
+
+a {
+    outline: 0;
+}
+
+footer a[href^="tel:"] {
+    color: #fff;
+}
+footer a[href^="tel:"]::before,
+a[href^="tel:"]::before {
+    content: " ";
+    margin-right: 0;
+}
+
+
+h1 {font-size: 1.8rem;}
+h2 {font-size: 1.4rem;}
+h3 {font-size: 1.2rem;}
+
+.display-1 {font-size: 3rem;}
+.display-2 {font-size: 2.5rem;}
+.display-3 {font-size: 2rem;}
+.display-4 {font-size: 1.8rem;}
+
+.anchor{
+ padding-top:64px; /* Dieser Wert kann variieren. */
+ width:0;
+ font-size:0;
+}
+
+ul.abstract p {
+	padding-left: 1.5rem;
+}
+
+.code {
+	padding: .2rem .4rem;
+	font-size: 90%;
+	color: #bd4147;
+	background-color: rgba(86,61,124,.15);
+	border-radius: .25rem;
+	font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+
+/* Link to top */
+.back-to-top {
+  position: fixed;
+  bottom: 2em;
+  right: 1.5em;
+  text-decoration: none;
+  color: #eee;
+  background-color: transparent;
+  opacity: 0.7;
+  padding: 1em;
+  z-index: 999;
+}
+.back-to-top:hover {
+  background-color: transparent;
+	color: #999;
+}
+
+
+/* dropdown & dropdown-submenu */
+.dropdown-menu {
+	margin: 0.5rem 0 0;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  top: .8em;
+}
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+.dropdown-submenu .dropdown-menu {
+	top: -.5rem;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.dropup .dropdown-menu {
+    top: auto;
+    bottom: 100% !important;
+}
+
+
+/* section & jumbotron background-image */
+.jumbotron.background-image,
+section.background-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.jumbotron.background-fixed,
+section.background-fixed {
+	background-attachment: fixed;
+}
+
+/* sectionmenu & submenu */
+#sectionmenu,
+#submenu {
+	min-width: 130px;
+}
+#sectionmenu .nav-link[data-toggle].collapsed:after,
+#submenu .nav-link[data-toggle].collapsed:after {
+	content: "▾";
+	margin-left: 0.25rem;
+}
+#sectionmenu .nav-link[data-toggle]:not(.collapsed):after,
+#submenu .nav-link[data-toggle]:not(.collapsed):after {
+	content: "▴";
+	margin-left: 0.25rem;
+}
+
+
+/* div */
+.ge_autoLayout_row figure,
+.card figure {margin: 0;}
+.card .list-group-item {color: #212529;}
+.card h5 {font-size: 1rem;}
+.meta-nav.text-white a {color: #fff !important;}
+div.alert p {margin: 0;}
+#language {cursor: pointer;}
+
+.tx-indexedsearch-redMarkup {color: red;}
+.tx-indexedsearch-info p {margin: 0;}
+
+.parallax {
+	background-attachment: fixed;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+
+
+/*
+https://github.com/philipwalton/flexbugs#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items
+*/
+.col { border: 1px solid transparent; }
+
+
+	/* default styles for extension "tx_frontend" */
+	/* Uploads */
+	.ce-uploads { margin: 0; padding: 0; }
+	.ce-uploads li { list-style: none outside none; margin: 1em 0; }
+	.ce-uploads img { float: left; padding-right: 1em; vertical-align: top; }
+	.ce-uploads span { display: block; }
+
+	/* Frame */
+	.frame-ruler-before:before { content: ''; display: block; border-top: 1px solid rgba(0,0,0,0.25); margin-bottom: 2em; }
+	.frame-ruler-after:after { content: ''; display: block; border-bottom: 1px solid rgba(0,0,0,0.25); margin-top: 2em; }
+	.frame-indent { margin-left: 15%; margin-right: 15%; }
+	.frame-indent-left { margin-left: 33%; }
+	.frame-indent-right { margin-right: 33%; }
+
+
+@media (max-width:767px) {
+  .nav > li.dropdown.open .dropdown-menu {
+	flex-direction:column;
+	text-align:left;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+	html {font-size: 16px;}
+
+	h1 {font-size: 2.3rem;}
+	h2 {font-size: 1.8rem;}
+	h3 {font-size: 1.6rem;}
+
+	.display-1 {font-size: 4.5rem;}
+	.display-2 {font-size: 4rem;}
+	.display-3 {font-size: 3rem;}
+	.display-4 {font-size: 2rem;}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+	h1 {font-size: 2.5rem;}
+	h2 {font-size: 2rem;}
+	h3 {font-size: 1.75rem;}
+
+	.display-1 {font-size: 6rem;}
+	.display-2 {font-size: 5.5rem;}
+	.display-3 {font-size: 4.5rem;}
+	.display-4 {font-size: 3.5rem;}
+
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+
+}

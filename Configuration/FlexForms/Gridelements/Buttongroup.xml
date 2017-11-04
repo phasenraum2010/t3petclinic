@@ -1,0 +1,78 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Content</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+
+					<vertical>
+						<TCEforms>
+							<label>Vertical variation</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</vertical>
+
+					<size>
+						<TCEforms>
+							<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.size</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.default</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.small</numIndex>
+										<numIndex index="1">btn-group-sm</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.large</numIndex>
+										<numIndex index="1">btn-group-lg</numIndex>
+									</numIndex>
+								</items>
+								<default></default>
+							</config>
+						</TCEforms>
+					</size>
+
+					<align>
+						<TCEforms>
+							<label>Button Group Alignment</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Default</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Center</numIndex>
+										<numIndex index="1">text-center</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Right</numIndex>
+										<numIndex index="1">text-right</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">Left</numIndex>
+										<numIndex index="1">text-left</numIndex>
+									</numIndex>
+								</items>
+								<default></default>
+							</config>
+						</TCEforms>
+					</align>
+
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

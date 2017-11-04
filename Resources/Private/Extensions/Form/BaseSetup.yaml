@@ -1,0 +1,20 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedFileMounts:
+          20: 1:/T3SBForm/Form/
+
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  100: 'fileadmin/T3SBForm/Templates/'
+
+      mixins:
+        finishersEmailMixin:
+          options:
+            templateRootPaths:
+              10: 'fileadmin/T3SBForm/Templates/Finishers/Email/'

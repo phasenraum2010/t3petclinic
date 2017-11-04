@@ -1,0 +1,69 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+ xmlns:t="http://typo3.org/ns/Helhum/TyposcriptRendering/ViewHelpers"
+ xmlns:t3sb="http://typo3.org/ns/T3SBS/T3sbootstrap/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{t3sb:formsettings(key:'form_ajax')}'">
+	<f:then>
+		<f:if condition="{t3sb:formsettings(key:'form_modal')}'">
+			<f:then>
+				<f:render section="Modal" arguments="{_all}" />
+				<f:render section="Link" arguments="{_all}" />
+			</f:then>
+			<f:else>
+				<f:render section="Formular" arguments="{_all}" />
+			</f:else>
+		</f:if>
+	</f:then>
+</f:if>
+</html>
+
+
+<f:section name="Formular">
+<formvh:renderRenderable renderable="{form}">
+	<formvh:form
+		object="{form}"
+		action="{form.renderingOptions.controllerAction}"
+		method="{form.renderingOptions.httpMethod}"
+		id="{form.identifier}"
+		section="{form.identifier}"
+		enctype="{form.renderingOptions.httpEnctype}"
+		addQueryString="{form.renderingOptions.addQueryString}"
+		argumentsToBeExcludedFromQueryString="{form.renderingOptions.argumentsToBeExcludedFromQueryString}"
+		additionalParams="{form.renderingOptions.additionalParams}"
+		additionalAttributes="{data-ajaxuri: '{t:uri.ajaxAction(contextRecord: \'tt_content:{t3sb:contentUid()}\', pageUid: \'{t3sb:pageUid()}\')}'}"
+	>
+		<f:render partial="{form.currentPage.templateName}" arguments="{page: form.currentPage}"/>
+		<div class="actions">
+			<f:render partial="Form/Navigation" arguments="{form: form}"/>
+		</div>
+	</formvh:form>
+</formvh:renderRenderable>
+</f:section>
+
+<f:section name="Modal">
+<div class="modal fade text-dark text-left" id="ajax-modal" tabindex="-1" role="dialog" aria-labelledby="ajaxModalLabel" aria-hidden="true">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="ajaxModalLabel">{f:translate(key: 'form.modal.label', extensionName: 't3sbootstrap')}</h5>
+			</div>
+			<div class="modal-body">
+				<f:render section="Formular" arguments="{_all}" />
+			</div>
+		</div>
+	</div>
+</div>
+</f:section>
+
+<f:section name="Link">
+<p><f:link.page class="nav-link icon-mail modal-ajax"
+	pageUid="{t3sb:pageUid()}"
+	title="Kontakt"
+	data="{toggle: 'modal', target: '#ajax-modal'}"
+	additionalAttributes="{data-ajaxuri: '{t:uri.ajaxAction(contextRecord: \'tt_content:{t3sb:contentUid()}\',pageUid: \'{t3sb:pageUid()}\',extensionName: \'form\', pluginName: \'formframework\', controller: \'FormFrontend\', action: \'render\')}'}"
+	>
+	<i class="fa fa-envelope-o" aria-hidden="true"></i> {f:translate(key: 'form.modal.link', extensionName: 't3sbootstrap')}
+</f:link.page></p>
+</f:section>

@@ -1,0 +1,37 @@
+<T3DataStructure>
+ 	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<type>array</type>
+				<TCEforms>
+					<sheetTitle>Settings</sheetTitle>
+				</TCEforms>
+				<el>
+					<appearance>
+						<TCEforms>
+							<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.appearance</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Accordion</numIndex>
+										<numIndex index="1">accordion</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Button</numIndex>
+										<numIndex index="1">button</numIndex>
+									</numIndex>
+								</items>
+								<default>accordion</default>
+							</config>
+						</TCEforms>
+					</appearance>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

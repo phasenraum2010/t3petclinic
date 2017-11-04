@@ -1,0 +1,31 @@
+/* Mega menu
+-------------------------------------------------- */
+#main-navbar .container,
+#main-navbar .container-fluid {
+	position: relative;
+}
+
+.mega-dropdown {
+  position: static !important;
+}
+
+.mega-dropdown-menu {
+  padding: 20px;
+  width: 100%;
+  top: inherit;
+}
+
+.nav-fill .mega-dropdown-menu .nav-item {
+  text-align: left;	
+}
+
+.navbar-dark .navbar-nav .mega-dropdown-menu .nav-link:focus, 
+.navbar-dark .navbar-nav .mega-dropdown-menu .nav-link:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+.navbar-dark .navbar-nav .mega-dropdown-menu .nav-link {
+    color: #212529;
+}
+

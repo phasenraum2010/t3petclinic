@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:if condition="{parallaxImage}">
+		<f:then>
+			<span class="anchor" id="c{data.uid}"></span>
+			<f:render partial="Header/All" arguments="{_all}" />
+			<section id="s{data.uid}" class="parallax bgImageSize{f:if(condition: '{class}', then: ' {class}')}" data-speed="{speedFactor}" style="background-image: url('{parallaxImage}');{f:if(condition: '{paddingTopBottom}', then: ' padding: {paddingTopBottom}rem 3rem;')}">
+				<f:if condition="{container}">
+					<div class="{container}">
+				</f:if>
+					<div style="background-color:{f:if(condition: '{data.flexform_bgColor}',then: '{data.flexform_bgColor}', else:'rgba(255,255,255,0.8)')}; padding:3rem;">
+						{data.tx_gridelements_view_column_0 -> f:format.raw()}
+					</div>
+				<f:if condition="{container}">
+					</div>
+				</f:if>
+			</section>
+		</f:then>
+		<f:else>
+			<div class="alert alert-danger" role="alert">No background-image is loaded!</div>
+		</f:else>
+	</f:if>
+</html>

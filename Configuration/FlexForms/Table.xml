@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<type>array</type>
+				<TCEforms>
+					<sheetTitle>Bootstrap Settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<tableClass>
+						<TCEforms>
+							<label>Table class</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Default</numIndex>
+										<numIndex index="1">table</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Striped rows</numIndex>
+										<numIndex index="1">table table-striped</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Bordered table</numIndex>
+										<numIndex index="1">table table-bordered</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">Hoverable rows</numIndex>
+										<numIndex index="1">table table-hover</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">Small table</numIndex>
+										<numIndex index="1">table table-sm</numIndex>
+									</numIndex>
+								</items>
+								<default>table</default>
+							</config>
+						</TCEforms>
+					</tableClass>
+
+					<tableInverse>
+						<TCEforms>
+							<label>Table inverse</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</tableInverse>
+
+					<tableResponsive>
+						<TCEforms>
+							<label>Responsive table</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</tableResponsive>
+
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

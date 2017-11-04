@@ -1,0 +1,102 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="form-group row">
+	<label for="jumbotronEnable" class="col-sm-3 control-label">
+		Enable
+	</label>
+	<div class="col-sm-9">
+		<div class="checkbox">
+			 <label>
+				<f:form.checkbox id="jumbotronEnable" class="form-check-input" property="jumbotronEnable" value="1" />
+			 </label>
+		</div>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="jumbotronBgimage" class="col-sm-3 control-label">
+		Background image
+	</label>
+	<div class="col-sm-9">
+		<f:form.select
+			id="jumbotronBgimage"
+			class="form-control"
+			property="jumbotronBgimage"
+			options="{jumbotronBgImageOptions}"
+			optionValueField="key"
+			optionLabelField="value"
+		/>
+		<small class="form-text text-muted">Enable background image from pages media</small>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="jumbotronFluid" class="col-sm-3 control-label">
+		Fluid
+	</label>
+	<div class="col-sm-9">
+		<div class="checkbox">
+			 <label>
+				<f:form.checkbox id="jumbotronFluid" class="form-check-input" property="jumbotronFluid" value="1" />
+				<small class="form-text text-muted">To make the jumbotron full width, and without rounded corners</small>
+			 </label>
+		</div>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="jumbotronPosition" class="col-sm-3 control-label">
+		Position
+	</label>
+	<div class="col-sm-9">
+		<f:form.select
+			id="jumbotronPosition"
+			class="form-control"
+			property="jumbotronPosition"
+			options="{jumbotronPositions}"
+			optionValueField="key"
+			optionLabelField="value"
+		/>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="jumbotronContainer" class="col-sm-3 control-label">
+		Container
+	</label>
+	<div class="col-sm-9">
+		<f:form.select
+			id="jumbotronContainer"
+			class="form-control"
+			property="jumbotronContainer"
+			options="{jumbotronContainerOptions}"
+			optionValueField="key"
+			optionLabelField="value"
+		/>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="jumbotronContainerposition" class="col-sm-3 control-label">
+		Container position
+	</label>
+	<div class="col-sm-9">
+		<f:form.select
+			id="jumbotronContainerposition"
+			class="form-control"
+			property="jumbotronContainerposition"
+			options="{jumbotronContainerpositionOptions}"
+			optionValueField="key"
+			optionLabelField="value"
+		/>
+		<small class="form-text text-muted">If "Container" is not "none"</small>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="jumbotronClass" class="col-sm-3 control-label">
+		Extra class
+	</label>
+	<div class="col-sm-9">
+		<f:form.textfield
+			id="jumbotronClass"
+			class="form-control"
+			property="jumbotronClass"
+		/>
+		<small class="form-text text-muted">e.g. "mb-0" for margin-bottom: 0</small>
+	</div>
+</div>
+</html>

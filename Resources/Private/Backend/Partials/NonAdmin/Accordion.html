@@ -1,0 +1,74 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headerJumbotron">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseJumbotron" aria-expanded="true" aria-controls"collapseJumbotron">
+					Jumbotron
+				</a>
+			</h4>
+		</div>
+		<div id="collapseJumbotron" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headerJumbotron">
+			<div class="panel-body">
+				<f:render partial="NonAdmin/Jumbotron" arguments="{_all}" />
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headerPagetitle">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsePagetitle" aria-expanded="true" aria-controls"collapsePagetitle">
+					Page Title
+				</a>
+			</h4>
+		</div>
+		<div id="collapsePagetitle" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headerPagetitle">
+			<div class="panel-body">
+				<f:render partial="NonAdmin/Pagetitle" arguments="{_all}" />
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headerBreadcrumb">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseBreadcrumb" aria-expanded="true" aria-controls"collapseBreadcrumb">
+					Breadcrumb
+				</a>
+			</h4>
+		</div>
+		<div id="collapseBreadcrumb" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headerBreadcrumb">
+			<div class="panel-body">
+				<f:render partial="NonAdmin/Breadcrumb" arguments="{_all}" />
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headerSidebar">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSidebar" aria-expanded="true" aria-controls"collapseSidebar">
+					Sidebar
+				</a>
+			</h4>
+		</div>
+		<div id="collapseSidebar" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headerSidebar">
+			<div class="panel-body">
+				<f:render partial="NonAdmin/Sidebar" arguments="{_all}" />
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headerFooter">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFooter" aria-expanded="true" aria-controls"collapseFooter">
+					Footer
+				</a>
+			</h4>
+		</div>
+		<div id="collapseFooter" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headerFooter">
+			<div class="panel-body">
+				<f:render partial="NonAdmin/Footer" arguments="{_all}" />
+			</div>
+		</div>
+	</div>
+</div>
+</html>

@@ -1,0 +1,51 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<general>
+			<ROOT>
+				<type>array</type>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.general</sheetTitle>
+				</TCEforms>
+				<el>
+					<!-- background attachment fixed -->
+					<bgAttachmentFixed>
+						<TCEforms>
+							<label>Background-attachment - fixed</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</bgAttachmentFixed>
+					<!-- background color -->
+					<bgColor>
+						<TCEforms>
+							<label>Background color</label>
+							<config>
+								<type>input</type>
+								<renderType>colorpicker</renderType>
+								<checkbox></checkbox>
+								<eval>trim</eval>
+								<size>10</size>
+							</config>
+						</TCEforms>
+					</bgColor>
+					<!-- padding Top&Bottom -->
+					<paddingTopBottom>
+						<TCEforms>
+							<label>Padding (top and bottom in rem)</label>
+							<config>
+								<type>input</type>
+								<checkbox></checkbox>
+								<eval>int</eval>
+								<size>6</size>
+							</config>
+						</TCEforms>
+					</paddingTopBottom>
+				</el>
+			</ROOT>
+		</general>
+	</sheets>
+</T3DataStructure>

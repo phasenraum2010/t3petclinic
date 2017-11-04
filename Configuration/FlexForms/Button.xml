@@ -1,0 +1,98 @@
+<T3DataStructure>
+	<meta type="array">
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<el>
+
+					<style>
+						<TCEforms>
+							<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.styles</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.secondary</numIndex>
+										<numIndex index="1">secondary</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.primary</numIndex>
+										<numIndex index="1">primary</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.success</numIndex>
+										<numIndex index="1">success</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.info</numIndex>
+										<numIndex index="1">info</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.warning</numIndex>
+										<numIndex index="1">warning</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.danger</numIndex>
+										<numIndex index="1">danger</numIndex>
+									</numIndex>
+									<numIndex index="6" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.link</numIndex>
+										<numIndex index="1">link</numIndex>
+									</numIndex>
+								</items>
+								<default>secondary</default>
+							</config>
+						</TCEforms>
+					</style>
+
+					<size>
+						<TCEforms>
+							<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.size</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.default</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.small</numIndex>
+										<numIndex index="1">btn-sm</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.large</numIndex>
+										<numIndex index="1">btn-lg</numIndex>
+									</numIndex>
+								</items>
+								<default></default>
+							</config>
+						</TCEforms>
+					</size>
+
+					<block>
+						<TCEforms>
+							<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.block</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</block>
+
+					<outline>
+						<TCEforms>
+							<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:flexforms.button.outline</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</outline>
+
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

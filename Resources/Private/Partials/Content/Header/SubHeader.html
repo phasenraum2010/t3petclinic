@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{subheader}">
+	<f:switch expression="{layout}">
+		<f:case value="1">
+			<h2 class="text-muted{f:if(condition: '{position}',then: ' text-{position}')}{f:if(condition: '{display}',then: ' {display}')}">
+				{subheader}
+			</h2>
+		</f:case>
+		<f:case value="2">
+			<h3 class="text-muted{f:if(condition: '{position}',then: 'text-{position}')}{f:if(condition: '{display}',then: ' {display}')}">
+				{subheader}
+			</h3>
+		</f:case>
+		<f:case value="3">
+			<h4 class="text-muted{f:if(condition: '{position}',then: ' text-{position}')}{f:if(condition: '{display}',then: ' {display}')}">
+				{subheader}
+			</h4>
+		</f:case>
+		<f:case value="4">
+			<h5 class="text-muted{f:if(condition: '{position}',then: ' text-{position}')}{f:if(condition: '{display}',then: ' {display}')}">
+				{subheader}
+			</h5>
+		</f:case>
+		<f:case value="5">
+			<h6 class="text-muted{f:if(condition: '{position}',then: ' text-{position}')}{f:if(condition: '{display}',then: ' {display}')}">
+				{subheader}
+			</h6>
+		</f:case>
+		<f:defaultCase>
+			<f:if condition="{default}">
+				<f:render partial="Header/SubHeader" arguments="{
+					subheader: subheader,
+					position: position,
+					display: display,
+					layout: default}" />
+			</f:if>
+		</f:defaultCase>
+	</f:switch>
+</f:if>
+</html>

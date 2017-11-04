@@ -1,0 +1,41 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Card Wrapper</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<!-- card wrapper: columns,group or deck  -->
+					<card_wrapper>
+						<TCEforms>
+							<label>Groups, Decks or Columns</label>
+
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Group</numIndex>
+										<numIndex index="1">group</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Deck</numIndex>
+										<numIndex index="1">deck</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Columns</numIndex>
+										<numIndex index="1">columns</numIndex>
+									</numIndex>
+								</items>
+								<default>group</default>
+							</config>
+						</TCEforms>
+					</card_wrapper>
+
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

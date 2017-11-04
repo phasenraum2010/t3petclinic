@@ -1,0 +1,266 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{config.navbar.enable}">
+	<f:if condition="{config.navbar.enable} == 'slide'">
+		<f:then>
+			<nav class="menu{config.navbar.sectionMenu}" role="navigation">
+				<ul>
+					<f:if condition="{config.navbar.sectionMenu}">
+						<f:then>
+							<f:if condition="{config.general.company}">
+								<li class="nav-item">
+									<span>{config.general.company}</span>
+								</li>
+							</f:if>
+							<f:render section="SectionMenu" arguments="{_all}" />
+						</f:then>
+						<f:else>
+							<li class="nav-item">
+								<f:render section="Brand" arguments="{_all}" />
+							</li>
+							<f:render section="Menu" arguments="{_all}" />
+						</f:else>
+					</f:if>
+				</ul>
+			</nav>
+			<a href="#" class="nav-toggle"><span class="fa fa-bars"></span></a>
+		</f:then>
+		<f:else>
+			<f:if condition="{config.navbar.container}">
+				<f:then>
+					<f:if condition="{config.navbar.containerposition} == 'inside'">
+						<f:then>
+							<nav id="main-navbar" class="navbar {config.navbar.class}"{f:if(condition:'{config.navbar.style}',then:' style="{config.navbar.style}"')}>
+								<div class="{config.navbar.container}">
+									<f:render section="NavbarInner" arguments="{_all}" />
+								</div>
+							</nav>
+						</f:then>
+						<f:else>
+							<div class="{config.navbar.container}">
+								<nav id="main-navbar" class="navbar {config.navbar.class}"{f:if(condition:'{config.navbar.style}',then:' style="{config.navbar.style}"')}>
+									<f:render section="NavbarInner" arguments="{_all}" />
+								</nav>
+							</div>
+						</f:else>
+					</f:if>
+				</f:then>
+				<f:else>
+					<nav id="main-navbar" class="navbar {config.navbar.class}"{f:if(condition:'{config.navbar.style}',then:' style="{config.navbar.style}"')}>
+						<f:render section="NavbarInner" arguments="{_all}" />
+					</nav>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:if>
+</html>
+
+
+<f:section name="NavbarInner">
+	<f:if condition="{config.navbar.toggler} == 'left'">
+		<f:then>
+		 	<f:render section="Toggler" arguments="{_all}" />
+			<f:render section="Brand" arguments="{_all}" />
+		</f:then>
+		<f:else>
+			<f:render section="Brand" arguments="{_all}" />
+		 	<f:render section="Toggler" arguments="{_all}" />
+		</f:else>
+	</f:if>
+	<div class="collapse navbar-collapse" id="navbarToggler">
+		<f:if condition="{navbarMenu} || {sectionMenu}">
+			<ul class="navbar-nav{config.navbar.sectionMenu}{config.navbar.justify}">
+				  <f:if condition="{config.navbar.sectionMenu}">
+					<f:then>
+						<f:render section="SectionMenu" arguments="{_all}" />
+					</f:then>
+					<f:else>
+						<f:render section="Menu" arguments="{_all}" />
+					</f:else>
+				  </f:if>
+			</ul>
+			<f:if condition="{config.navbar.searchbox}">
+				<f:render partial="Page/Searchbox" arguments="{_all}" />
+			</f:if>
+			<f:render section="Language" arguments="{_all}" />
+		</f:if>
+	</div>
+</f:section>
+
+<f:section name="Brand">
+	<f:switch expression="{config.navbar.brand}">
+		<f:case value="imgText">
+			<f:link.typolink class="navbar-brand" parameter="{config.general.homepageUid}">
+				<f:image src="{config.navbar.image}" width="{settings.navbar.image.width}" height="{settings.navbar.image.height}" class="d-inline-block align-top" />
+				{config.general.company}
+			</f:link.typolink>
+		</f:case>
+		<f:case value="image">
+			<f:link.typolink class="navbar-brand" parameter="{config.general.homepageUid}">
+				<f:image src="{config.navbar.image}" width="{settings.navbar.image.width}" height="{settings.navbar.image.height}" />
+			</f:link.typolink>
+		</f:case>
+		<f:case value="heading">
+			<h1 class="navbar-brand mb-0">{config.general.company}</h1>
+		</f:case>
+		<f:defaultCase>
+			<f:link.typolink class="navbar-brand" parameter="{config.general.homepageUid}">
+				{config.general.company}
+			</f:link.typolink>
+		</f:defaultCase>
+	</f:switch>
+</f:section>
+
+<f:section name="Toggler">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+</f:section>
+
+<f:section name="Menu">
+	<f:for each="{navbarMenu}" as="navbarItem">
+		<li class="nav-item{f:if(condition: navbarItem.active, then:' active')}{f:if(condition: navbarItem.children, then:' {config.navbar.dropdown}')}{f:if(condition:'{config.navbar.megamenu} && {navbarItem.data.doktype}==4 ',then:' mega-dropdown')}">
+			<f:if condition="{navbarItem.spacer}">
+				<f:then>
+					<span class="nav-link">{navbarItem.title}</span>
+				</f:then>
+				<f:else>
+					<f:if condition="{navbarItem.children} && {config.navbar.enable} != 'slide'">
+						<f:then>
+							<f:render section="Dropdown" arguments="{_all}" />
+						</f:then>
+						<f:else>
+							<f:link.typolink class="nav-link" parameter="{navbarItem.link}">
+								{navbarItem.title}
+							</f:link.typolink>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</li>
+	</f:for>
+</f:section>
+
+<f:section name="SectionMenu">
+
+
+	<f:for each="{sectionMenu.0.content}" as="element">
+		<f:if condition="{element.data.header}">
+			 <li class="nav-item">
+				<a class="nav-link" href="{page.link}#c{element.data.uid}" target="{page.target}">
+					<span>{element.data.header}</span>
+				</a>
+			 </li>
+		</f:if>
+	</f:for>
+</f:section>
+
+<f:section name="Dropdown">
+	<a class="nav-link dropdown-toggle" id="dropdown-menu-{navbarItem.data.uid}" href="<f:uri.page pageUid="{navbarItem.link}"/>" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		{navbarItem.title}
+	</a>
+	<f:if condition="{config.navbar.megamenu} && {navbarItem.data.doktype}==4">
+		 <f:then>
+			<div class="dropdown-menu mega-dropdown-menu" aria-labelledby="dropdown-menu-{navbarItem.data.uid}">
+				<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{navbarItem.data.uid}', colPos: '0'}"/>
+			</div>
+		 </f:then>
+		 <f:else>
+			<div class="dropdown-menu" aria-labelledby="dropdown-menu-{navbarItem.data.uid}">
+				<f:for each="{navbarItem.children}" as="child">
+					<f:if condition="{child.spacer}">
+						<f:then>
+							<span class="dropdown-item">{child.title}</span>
+						</f:then>
+						<f:else>
+							<f:if condition="{child.children}">
+								<f:then>
+									<f:render section="Subdropdown" arguments="{child: child}" />
+								</f:then>
+								<f:else>
+									<f:link.typolink class="dropdown-item{f:if(condition: child.current, then:' active')}" parameter="{child.link}">
+										{child.title}
+									</f:link.typolink>
+								</f:else>
+							</f:if>
+						</f:else>
+					</f:if>
+				</f:for>
+			</div>
+		 </f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Subdropdown">
+	<f:if condition="{child.children}">
+		 <f:then>
+			<div class="dropdown-submenu">
+				<f:link.typolink class="dropdown-item dropdown-toggle{f:if(condition: child.current, then:' active')}" parameter="{child.link}">
+					{child.title}
+				</f:link.typolink>
+				<div class="dropdown-menu">
+					<f:for each="{child.children}" as="grandchild">
+							 <f:if condition="{grandchild.spacer}">
+								  <f:then>
+								<span class="dropdown-item">{grandchild.title}</span>
+								  </f:then>
+								  <f:else>
+								<f:if condition="{grandchild.children}">
+									<f:then>
+										<f:render section="Subdropdown" arguments="{child: grandchild}" />
+									</f:then>
+									<f:else>
+										<f:link.typolink class="dropdown-item{f:if(condition: grandchild.current, then:' active')}" parameter="{grandchild.link}">
+											{grandchild.title}
+										</f:link.typolink>
+									</f:else>
+								</f:if>
+								  </f:else>
+							 </f:if>
+					</f:for>
+				</div>
+			</div>
+		</f:then>
+		<f:else>
+			<f:link.typolink class="dropdown-item{f:if(condition: child.current, then:' active')}" parameter="{child.link}">
+				{child.title}
+			</f:link.typolink>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Language">
+<f:if condition="{languageNavigation} && {config.lang.uid} && {config.lang.hreflang} && {config.lang.title}">
+	<ul id="language_menu" class="navbar-nav ml-auto">
+		<li class="nav-item active dropdown">
+				 <span class="nav-link dropdown-toggle" id="language" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				  <i class="fa fa-globe fa-lg" aria-hidden="true"></i>
+				 </span>
+
+			<div class="dropdown-menu dropdown-menu-right">
+				<f:for each="{config.lang.uid}" as="lang">
+					<f:if condition="{languageNavigation.{lang}.available}">
+						<f:then>
+							<f:if condition="{languageNavigation.{lang}.active}">
+								<f:then>
+									<a href="{languageNavigation.{lang}.link}" class="dropdown-item active" hreflang="{config.lang.hreflang.{lang}}" title="{config.lang.title.{lang}}">
+										<span>{config.lang.title.{lang}}</span>
+									</a>
+								</f:then>
+								<f:else>
+									<a href="{languageNavigation.{lang}.link}" class="dropdown-item" hreflang="{config.lang.hreflang.{lang}}" title="{config.lang.title.{lang}}">
+										<span>{config.lang.title.{lang}}</span>
+									</a>
+								</f:else>
+							</f:if>
+						</f:then>
+						<f:else>
+							<span class="dropdown-item text-muted">{config.lang.title.{lang}}</span>
+						</f:else>
+					</f:if>
+				</f:for>
+			</div>
+		</li>
+	</ul>
+</f:if>
+</f:section>

@@ -1,0 +1,65 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="carousel-item">
+	<f:if condition="{files.0}">
+		<f:then>
+			<f:if condition="{data.header}">
+				<f:then>
+					<f:render partial="Media/Rendering/Image" arguments="{file: files.0, width: dimensions.width, height: dimensions.height, addmedia: addmedia}" />
+					<div class="carousel-caption d-none d-md-block">
+						<f:render partial="Header/All" arguments="{_all}" />
+						<f:if condition="{data.bodytext}">
+							<div class="slider-text animated fadeInDown">
+								{data.bodytext -> f:format.html()}
+							</div>
+						</f:if>
+						<f:if condition="{data.header_link}">
+							<f:link.typolink parameter="{data.header_link}" class="btn btn-primary btn-sm animated fadeInUp">
+								<f:translate key="LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang.xlf:read-more" />
+							</f:link.typolink>
+						</f:if>
+					</div>
+				</f:then>
+				<f:else>
+					<f:if condition="{data.bodytext}">
+						<f:then>
+							<f:render partial="Media/Rendering/Image" arguments="{file: files.0, width: dimensions.width, height: dimensions.height, addmedia: addmedia}" />
+							<div class="carousel-caption d-none d-md-block">
+								<div class="slider-text animated fadeInDown">
+									{data.bodytext -> f:format.html()}
+								</div>
+								<f:if condition="{data.header_link}">
+									<f:link.typolink parameter="{data.header_link}" class="btn btn-primary btn-sm animated fadeInUp">
+										<f:translate key="LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang.xlf:read-more" />
+									</f:link.typolink>
+								</f:if>
+							</div>
+						</f:then>
+						<f:else>
+							<f:link.typolink parameter="{data.header_link}">
+								<f:render partial="Media/Rendering/Image" arguments="{file: files.0, width: dimensions.width, height: dimensions.height, addmedia: addmedia}" />
+							</f:link.typolink>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<div class="carousel-caption d-none d-md-block">
+				<f:if condition="{data.header}">
+					<f:render partial="Header/All" arguments="{_all}" />
+				</f:if>
+				<f:if condition="{data.bodytext}">
+					<div class="slider-text animated fadeInDown" style="color: red;">
+						{data.bodytext -> f:format.html()}
+					</div>
+				</f:if>
+				<f:if condition="{data.header_link}">
+					<f:link.typolink parameter="{data.header_link}" class="btn btn-primary btn-sm animated fadeInUp">
+						<f:translate key="LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang.xlf:read-more" />
+					</f:link.typolink>
+				</f:if>
+			</div>
+		</f:else>
+	</f:if>
+</div>
+</html>
